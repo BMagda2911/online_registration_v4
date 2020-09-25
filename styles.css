@@ -3,7 +3,11 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Merriweather', serif;
+}
 
+/*some of the break elements in the HTML are just for some structure before the CSS was done, so I need to take it out there as soon as I start writing my CSS rules*/
 
 /* -- media queries --*/
 
