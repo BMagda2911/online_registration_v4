@@ -7,11 +7,11 @@
 .body-container {
   font-family: 'Merriweather', serif;
   font-size: 14px;
-  background-color: #F5F5F5;
+  background-color: #e9f0f5a6;
 }
 
-.inner-body-wrapper {
-  align: center;
+h1 {
+  font-size: 1.3em;
 }
 
 .top-page-headline {
@@ -37,7 +37,7 @@ hr {
   height: 10px;
   border-top: 5px solid #5079A0;
   border-bottom: 2px solid #5079A0;
-  margin: 15px;
+  margin: 20px 15px;
 }
 
 fieldset {
@@ -48,7 +48,7 @@ fieldset {
 legend {
   font-size: 1.2em;
   font-weight: bold;
-  margin: 15px 0;
+  margin: 16px 0;
 }
 
 form {
@@ -56,36 +56,60 @@ form {
 }
 
 form p {
-  padding: 15px 30px;
+  padding: 0 33px 15px 30px;
   color: grey;
   text-align: center;
 }
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="number"],
 select {
-  display: block;
+  all: unset;
+  appearance: none;
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
   width: 100%;
   height: 40px;
+  background: white;
   margin: 15px 0;
-  padding: 5px;
+  padding: 0 15px;
   border-radius: 10px;
-  border: none;
-  outline: none;
-  box-shadow: none;
 }
 
 input::placeholder {
   text-align: right;
+  font-style: italic;
+  color: gray;
+  padding-right: 5px;
 }
 
-input:hover {
+input:hover,
+textarea:hover,
+select:hover {
   border: 1px solid #5079A0;
+  cursor: pointer;
 }
-input:focus {
-  background-color: #d6efff;
-  border: 1px solid #5079A0;
-  transition-property: background-color;
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: white;
+
+  outline: none;
+  border: 2px solid #5079A0;
   transition-duration: .5s;
+}
+
+select::placeholder {
+  color: gray;
+  padding-right: 5px;
+}
+
+.fa-sort {
+  color: salmon;
 }
 
 input[type=radio],
@@ -96,7 +120,7 @@ input[type=checkbox] {
   margin: 0;
   vertical-align: bottom;
   position: relative;
-  top: -1px;
+  top: 1px;
   display: inline-block;
   margin-bottom: 10px;
 }
@@ -110,28 +134,37 @@ input[type=checkbox] {
 
 label[for^="newsletter"] {
   display: block;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
 }
 
 textarea {
   width: 100%;
   height:100px;
   resize: vertical;
-  padding:10px;
+  background: white;
+  padding: 15px;
   border-radius:10px;
+}
+
+textarea:focus{
+  outline: none;
 }
 
 button {
   width: 290px;
   padding: 15px;
   border: none;
+  border-radius: 10px;
   background-color: #5079A0;
   color: #fff;
   font-family: inherit;
   font-size: 1.2em;
   font-weight: 900;
-  border-radius: 10px;
   margin: 20px 15px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .text-copyright {
@@ -141,8 +174,6 @@ button {
   padding: 20px 0;
 }
 
-/*some of the break elements in the HTML are just for some structure before the CSS was done, so I need to take it out there as soon as I start writing my CSS rules*/
-
 /* -- media queries --*/
 
 @media (min-width: 768px) {
@@ -151,61 +182,41 @@ button {
   select,
   label,
   textarea {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .inner-body-wrapper {
-    max-width: 600px;
+    width: 50%;
+    max-width: 700px;
     margin: 0 auto;
   }
   .top-page-headline {
-    margin: 0;
+    margin: 0 auto;
     width: 100%;
   }
   hr {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 50px 0;
   }
   fieldset {
     margin: 0;
   }
 
-  /*
-  .contact-info-field {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .contact-info{
-    width: 70%;
-    display: inline-block;
-  }
-  .contact-info-label {
-    width: 30%;
-    display: inline-block;
-  }
-
-  */
   .contact-info-field {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
   }
   .contact-info-field label {
-    margin: 5px 10px 5px 0;
+    padding-right: 5px;
     width: 30%;
-    display: inline-flex;
+    display: inline;
   }
   .contact-info-field input,
   .contact-info-field select {
-    display: inline-flex;
+    display: inline;
     padding: 10px;
     vertical-align: middle;
-    margin: 5px 10px 5px 0;
     width: 70%;
-  }
-
-  input,
-  select {
-    height: 50px;
+    height: 55px;
   }
 
   input[type=radio],
@@ -216,8 +227,8 @@ button {
 
   input[type=radio],
   input[type=checkbox] {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
   .form-holder {
     padding-left: 20px;
