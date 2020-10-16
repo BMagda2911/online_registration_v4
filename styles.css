@@ -108,8 +108,11 @@ select::placeholder {
   padding-right: 5px;
 }
 
-.fa-sort {
-  color: salmon;
+.sort-icon {
+  background-image: url(sort-solid.svg);
+  background-repeat: no-repeat;
+  background-position: right 5% bottom 50%;;
+  background-size: 13px;
 }
 
 input[type=radio],
