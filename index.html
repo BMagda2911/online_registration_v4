@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet"
     type="text/css">
-  <link href="sort-solid.svg" rel="stylesheet"></link>
+  <link href="sort-solid.svg" rel="stylesheet" />
 </head>
 
 <body class="body-container">
@@ -103,22 +103,27 @@
       <hr>
       <fieldset>
         <legend>Newsletter</legend>
-        <label for="newsletter_options">Select the newsletter you would like to receive</label><br>
-        <input type="checkbox" id="html_news" value="newsletter_html_news" name="user_news"><label for="html_news"
-          class="form-holder">HTML News</label><br>
-        <input type="checkbox" id="css_news" value="newsletter_css_news" name="user_news"><label for="css_news"
-          class="form-holder">CSS News</label><br>
-        <input type="checkbox" id="javascript_news" value="newsletter_javascript_news" name="user_news"><label
-          for="javascript_news" class="form-holder">Javascript News</label><br>
 
-        <label for="newsletter_format">Newsletter format</label><br>
-        <input type="radio" id="html" value="under_13" name="user_choice"><label for="html"
-          class="form-holder">HTML</label><br>
-        <input type="radio" id="plain_text" value="plain_text" name="user_choice"><label for="plain_text"
-          class="form-holder">Plain text</label><br>
+        <label class="sub-headline">Select the newsletter you would like to receive</label><br>      
+        <input type="checkbox" id="html_news" value="newsletter_html_news" name="user_news">
+        <label for="html_news" class="form-holder">HTML News</label><br>
+
+        <input type="checkbox" id="css_news" value="newsletter_css_news" name="user_news">
+        <label for="css_news" class="form-holder">CSS News</label><br>
+
+        <input type="checkbox" id="javascript_news" value="newsletter_javascript_news" name="user_news">
+        <label for="javascript_news" class="form-holder">Javascript News</label><br>
+        
+        <label class="sub-headline">Newsletter format</label><br>
+
+        <input type="radio" id="newsletter_format" value="under_13" name="user_choice_html">
+        <label for="html" class="form-holder">HTML</label><br>
+
+        <input type="radio" id="plain_text" value="plain_text" name="user_choice_text">
+        <label for="plain_text" class="form-holder">Plain text</label><br>
 
         <label for="newsletter_bio">Other topics you'd like to hear about</label><br>
-        <textarea id="bio" name="user_bio"></textarea>
+        <textarea id="newsletter_bio" name="user_bio"></textarea>
       </fieldset>
       <button type="submit">Sign Up</button>
     </form>
