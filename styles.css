@@ -56,9 +56,22 @@ form {
 }
 
 form p {
-  padding: 0 33px 15px 30px;
+  padding: 0 33px;
   color: grey;
+}
+
+p:first-of-type {
   text-align: center;
+}
+
+.newsletter-field p {
+  padding: 0;
+  margin: 5px 0;
+  text-align: start;
+}
+
+textarea {
+  margin-top: 15px;
 }
 
 input[type="text"],
@@ -71,7 +84,6 @@ select {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-
   width: 100%;
   height: 40px;
   background: white;
@@ -125,18 +137,22 @@ input[type=checkbox] {
   position: relative;
   top: 1px;
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+#zipcode {
+  width: 50%;
 }
 
 .form-holder {
   position:absolute;
   display: inline-block;
   padding-left: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.sub-headline {
-  padding: 10px 0 10px 0;
+#plain_text {
+  margin-bottom: 30px;
 }
 
 textarea {
@@ -176,7 +192,7 @@ button:hover {
   padding: 20px 0;
 }
 
-/* -- media queries --*/
+/* -- media query --*/
 
 @media (min-width: 768px) {
   .body-container,
@@ -186,20 +202,39 @@ button:hover {
   textarea {
     font-size: 1.1em;
   }
+
   .inner-body-wrapper {
     width: 50%;
     max-width: 700px;
     margin: 0 auto;
   }
+
   .top-page-headline {
     margin: 0 auto;
     width: 100%;
   }
+
+  .sub-headline {
+    padding-top: 50px;
+  }
+
   hr {
     margin: 50px 0;
   }
-  fieldset {
+
+  #zipcode {
+    width: 30%;
+  }
+
+  fieldset,
+  .newsletter-field label {
     margin: 0;
+  }
+
+  form p {
+    padding: 0;
+    text-align: start;
+    color: grey;
   }
 
   .contact-info-field {
@@ -207,19 +242,22 @@ button:hover {
     flex-flow: row wrap;
     align-items: center;
   }
-  .contact-info-field label {
-    padding-right: 5px;
-    width: 30%;
-    display: inline;
+
+  .contact-info-field > label {
+    flex: 1;
   }
+  .contact-info-field > input {
+    flex: 2;
+  }
+/*
   .contact-info-field input,
   .contact-info-field select {
     display: inline;
     padding: 10px;
     vertical-align: middle;
-    width: 70%;
+    width: 100%;
     height: 55px;
-  }
+  }*/
 
   input[type=radio],
   input[type=checkbox],
@@ -232,14 +270,21 @@ button:hover {
     width: 20px;
     height: 20px;
   }
+
+  #plain_text {
+    margin-bottom: 50px;
+  }
+
   .form-holder {
     padding-left: 20px;
   }
+
   button {
     width: 100%;
     padding: 15px 0;
     margin: 30px auto;
   }
+
   .text-copyright {
     padding: 20px 0;
     margin-bottom: 15px;
