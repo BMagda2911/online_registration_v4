@@ -7,6 +7,10 @@
 .body-container {
   font-family: 'Merriweather', serif;
   font-size: 14px;
+  background-color: #fff;
+}
+
+.inner-body-wrapper {
   background-color: #e9f0f5a6;
 }
 
@@ -103,11 +107,11 @@ select:hover {
   border: 1px solid #5079A0;
   cursor: pointer;
 }
+
 input:focus,
 textarea:focus,
 select:focus {
   background-color: white;
-
   outline: none;
   border: 2px solid #5079A0;
   transition-duration: .5s;
@@ -138,10 +142,7 @@ input[type=checkbox] {
   margin-bottom: 15px;
 }
 
-#zipcode {
-  width: 50%;
-  display: block;
-}
+
 
 .form-holder {
   position:absolute;
@@ -191,7 +192,13 @@ button:hover {
   padding: 20px 0;
 }
 
-/* -- media query --*/
+/* -- media queries --*/
+@media (max-width: 767px){
+  #zipcode {
+    width: 50%;
+    display: block;
+  }
+}
 
 @media (min-width: 768px) {
   .body-container,
@@ -203,9 +210,9 @@ button:hover {
   }
 
   .inner-body-wrapper {
-    width: 50%;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 30px;
   }
 
   .top-page-headline {
@@ -221,10 +228,6 @@ button:hover {
     margin: 50px 0;
   }
 
-  #zipcode {
-    width: 23%;
-  }
-
   fieldset,
   .newsletter-field label {
     margin: 0;
@@ -236,26 +239,23 @@ button:hover {
     color: grey;
   }
 
-  .contact-info-field {
+  .contact-info-row {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
   }
 
-  .contact-info-field > label {
-    display: inline;
+  .contact-info-row label {
     width: 30%;
   }
-  .contact-info-field > input,
-  .contact-info-field > select {
-    display: inline;
-    width: 70%;
+  
+  .contact-info-row:last-child input {
+    max-width: 30%;
   }
 
-  input[type=radio],
-  input[type=checkbox],
-  .form-holder {
-    margin-bottom: 20px;
+  .contact-info-row input,
+  .contact-info-row select {
+    flex: 2;
   }
 
   input[type=radio],
